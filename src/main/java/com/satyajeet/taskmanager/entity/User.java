@@ -8,7 +8,7 @@ import lombok.*;
 import java.util.List;
 
 @Entity
-@Table(name = "users")
+@Table(name = "taskflow_users")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -33,7 +33,11 @@ public class User {
 
     private String securityQuestion;
 
-    private String securityAnswer; // stored as bcrypt hash
+    private String securityAnswer;
+
+    @Column(nullable = false)
+    @Builder.Default
+    private String role = "USER";
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Task> tasks;

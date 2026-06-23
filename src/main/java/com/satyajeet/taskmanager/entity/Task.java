@@ -7,7 +7,7 @@ import lombok.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "tasks")
+@Table(name = "taskflow_tasks")
 @Getter
 @Setter
 @NoArgsConstructor
